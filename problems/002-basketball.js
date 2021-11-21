@@ -16,7 +16,16 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
-    return undefined;
+  let firstResult = 0;
+  let secondResult = 0;
+  for (result of points){
+    const gameArr = result.split('-');
+    firstResult += parseInt(gameArr[0], 10);
+    secondResult += parseInt(gameArr[1], 10);
+  }
+  if (firstResult === secondResult) return undefined;
+  else if (firstResult >= secondResult) return 1;
+  else return 2;
 }
 
 module.exports = getWinner;
