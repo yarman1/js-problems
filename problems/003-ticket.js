@@ -14,7 +14,18 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    let firstSum = 0;
+    let secondSum = 0;
+    const numbers = number.split('')
+    .map((number)=>parseInt(number, 10));
+    for (index in numbers){
+        if(index > 2){
+            secondSum += numbers[index];
+            continue;
+        }
+        firstSum += numbers[index];
+    }
+    return firstSum === secondSum ? true : false;
 }
 
 module.exports = checkTicket;
