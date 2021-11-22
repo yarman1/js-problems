@@ -13,7 +13,15 @@
  * @returns {boolean}
  */
 function isPalindrome(value) {
-    return undefined;
+    palindromeFlag = true;
+    const valueArr = value.split('');
+    for (let i = 0; i < valueArr.length/2; i++){
+        if(valueArr[i] !== valueArr[valueArr.length - 1 - i]){
+            palindromeFlag = false;
+            break; 
+        }
+    }
+    return palindromeFlag;
 }
 
 module.exports = isPalindrome;
