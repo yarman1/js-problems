@@ -16,7 +16,21 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    const decoder = 'abcdefghijklmnopqrstuvwxyz';
+    const secretArr = secret.split('');
+    let resultArr = [];
+    for (let i = 0; i < secret.length; i++){
+        if(secretArr[i] === 'z'){ 
+            resultArr.push('a');
+            continue;
+        }
+        if(secretArr[i] === ' '){ 
+            resultArr.push(' ');
+            continue;
+        }
+        resultArr[i] = decoder[decoder.indexOf(secretArr[i])+1];
+    }
+    return resultArr.join(''); 
 }
 
 module.exports = decrypt;
