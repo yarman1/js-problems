@@ -18,7 +18,21 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    let flagNum = false;
+    let flagLet = false;
+    let flagUpperCase = false;
+    const passArr = password.split('');
+    for (const element in  passArr){
+        if(!isNaN(parseInt(passArr[element], 10))){ 
+            flagNum = true;
+        } else {
+            flagLet = true;
+            if(passArr[element] === passArr[element].toUpperCase()){
+                flagUpperCase = true;
+            }
+        }
+    }
+    return (flagNum == true && flagLet == true && flagUpperCase == true) ? true : false;
 }
 
 module.exports = validatePassword;
