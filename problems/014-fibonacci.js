@@ -17,7 +17,13 @@
  * @returns {number}
  */
 function fibonacci(n) {
-    return undefined;
+    if(n <= 2 && n > 0){
+        return 1;
+    }else if(n <= 0){
+        return 0;
+    } else {
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
 }
 
 module.exports = fibonacci;
